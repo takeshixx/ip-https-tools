@@ -21,7 +21,7 @@ of Windows and Windows Server are not supported.
 ]]
 
 author = "Niklaus Schiess <nschiess@adversec.com>"
-categories = {'discovery', 'default'}
+categories = {'discovery', 'safe', 'default'}
 
 ---
 --@output
