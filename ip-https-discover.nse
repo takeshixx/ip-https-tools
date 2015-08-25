@@ -51,7 +51,7 @@ action = function(host, port)
     -- If there is no targetname, take the subject commonName from the SSL cert.
     local status,cert = sslcert.getCertificate(host,port)
     if not status then
-      stdnse.print_debug("%s: Could not retrieve SSL certificate", SCRIPT_NAME)
+      stdnse.debug1("Could not retrieve SSL certificate")
       return
     end
     target = cert.subject['commonName']
@@ -63,7 +63,7 @@ action = function(host, port)
     string.format(request, target),
     { timeout=3000, lines=4 })
   if not socket then
-    stdnse.print_debug("%s: Problem establishing connection: %s", SCRIPT_NAME, response)
+    stdnse.debug1("Problem establishing connection: %s", response)
     return nil
   end
   socket:close()
